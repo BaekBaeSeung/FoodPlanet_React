@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // 여기가 메인 메이지
-import App from './App';
+import App from './foodplanet/main';
 // 
 import reportWebVitals from './reportWebVitals';
 
