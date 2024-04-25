@@ -15,7 +15,7 @@ const MainPage = () => {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []); // []는 컴포넌트가 마운트될 때 한 번만 실행됨
+  }, []); // []는 컴포넌트가 마운트될 때 한 번만 실행됨 jjjjj
 
   return (
     <div>
