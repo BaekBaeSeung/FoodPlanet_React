@@ -15,15 +15,7 @@ function App() {
                 // 인텔리제이 - 마이스트링부트 - ForReactController
                 const url = 'http://localhost:8888/react/data/exam01';
 
-                const config = {
-                    headers: {
-                      'Authorization': 'Bearer <token>',
-                      'Cache-Control': 'no-cache'
-                      // 다른 필요한 헤더도 추가할 수 있습니다.
-                    }
-                  };
-
-                const response = await axios.get(url, config);
+                const response = await axios.get(url);
 
                 setReceivedData(response.data);
                 console.log(response.data);
