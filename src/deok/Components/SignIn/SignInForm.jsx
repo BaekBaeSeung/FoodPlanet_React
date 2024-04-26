@@ -1,22 +1,22 @@
-import './LoginForm.css';
+import './SignInForm.css';
 import { FaUser,FaLock } from "react-icons/fa";
 
-const LoginForm = () => {
+const SignInForm = () => {
     return(
         <div className='wrapper'>
             <form action=''>
                 <h1>로그인</h1>
                 <div className='input-box'>
-                    <input type="text" placeholder='아이디를 입력해 주세요.' required />
+                    <input type="text" placeholder='Eamil' required />
                     <FaUser className='icon' />
                 </div>
                 <div className='input-box'>
-                    <input type="password" placeholder='비밀번호를 입력해 주세요.' required />
+                    <input type="password" placeholder='Password' required />
                     <FaLock className='icon' />
                 </div>
 
                 <div className='remember-forgot'>
-                    <label><input type="checkbox" name="" id="" />아이디 기억하기</label>
+                    <label><input type="checkbox" name="" id="" />이메일 기억하기</label>
                     <a href='#'>비밀번호를 잊어버리셨나요?</a>
                 </div>
 
@@ -30,4 +30,4 @@ const LoginForm = () => {
     );
 }
 
-export default LoginForm;
+export default SignInForm;
