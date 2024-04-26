@@ -6,7 +6,7 @@ const MainPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:8888/api/data')
+    axios.get('http://localhost:8888/react/data/exam01')
       .then(response => {
         setData(response.data);
         setLoading(false);
@@ -15,7 +15,7 @@ const MainPage = () => {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []); // []는 컴포넌트가 마운트될 때 한 번만 실행됨 jjjjj
+  }, []); // []는 컴포넌트가 마운트될 때 한 번만 실행됨
 
   return (
     <div>
