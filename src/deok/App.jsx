@@ -1,20 +1,17 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import SignIn from './Components/SignIn/SignInForm';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function App() {
-    const navigate = useNavigate();
-
-    const goToSignIn = () => {
-        navigate("/signIn");
-    }
 
     return (
-            <div>
-                <button onClick={() => navigate(-1)}>go back</button>
-                <button type="button" onClick={goToSignIn}>Login</button>
-                <Routes>
-                    <Route path="/signIn" element={<SignIn />}></Route>
-                </Routes>
+            <div >
+                <h1>메인 페이지</h1>
+                <div>
+                    <Link to="/login" style={{textDecoration: 'none'}}>
+                    <span>로그인</span>
+                    </Link>
+                </div>
+
             </div>
     );
 }
