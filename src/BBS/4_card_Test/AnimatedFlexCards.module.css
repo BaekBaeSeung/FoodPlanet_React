@@ -6,7 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+.body {
     background-color: #eeeeea;
 }
 
@@ -78,7 +78,7 @@ body {
     text-transform: uppercase;
 }
 
-input {
+/* input {
     display: none;
 }
 
@@ -89,7 +89,7 @@ input:checked + label {
 input:checked + label .description {
     opacity: 1 !important;
     transform: translateY(0) !important;
-}
+} */
 
 .card[htmlFor="c1"] {
     background-image: url('../images/촛불1978_03.PNG');
