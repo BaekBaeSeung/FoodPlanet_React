@@ -92,17 +92,17 @@
 }
 
 .card[htmlFor="c1"] {
-    background-image: url('../images/촛불1978_03.PNG');
+    background-image: url('./../../images/assets/촛불1978_03.png');
 }
 
 .card[htmlFor="c2"] {
-    background-image: url('../images/촛불1978_04.PNG');
+    background-image: url('./../../images/assets/촛불1978_04.png');
 }
 
 .card[htmlFor="c3"] {
-    background-image: url('../images/촛불1978_05.PNG');
+    background-image: url('./../../images/assets/촛불1978_05.png');
 }
 
 .card[htmlFor="c4"] {
-    background-image: url('../images/촛불1978_06.PNG');
+    background-image: url('./../../images/assets/촛불1978_06.png');
 }

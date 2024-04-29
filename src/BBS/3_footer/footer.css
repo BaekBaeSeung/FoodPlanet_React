@@ -29,7 +29,7 @@
     color: white;
 }
 
-a{
+.a_T{
     color:rgb(175, 175, 179);
     text-decoration: none;
 }
@@ -78,7 +78,7 @@ a{
     font-weight: 600;
 }
 
-hr{
+.hr_T{
     color: white !important;
     width: 100%
 }
