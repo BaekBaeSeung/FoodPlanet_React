@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('/src/deok/Components/Assets/pxfuel.png') no-repeat;
+    background: url('/src/images/assets/logInBackground.png') no-repeat;
     background-size: cover;
     background-position: center;
 }

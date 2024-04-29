@@ -5,9 +5,9 @@ import { PiCalendarBold } from "react-icons/pi";
 import { GiSmartphone } from "react-icons/gi";
 import { IoHomeOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import google from '../Assets/btn_google.svg';
-import kakao from '../Assets/btn_kakao.svg';
-import naver from '../Assets/btn_naver.svg';
+import kakao from '../../../images/assets/btn_kakao.svg'
+import google from '../../../images/assets/btn_google.svg'
+import naver from '../../../images/assets/btn_naver.svg';
 
 const SignUpForm = () => {
 
