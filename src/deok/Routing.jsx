@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './Components/LogIn/LogInForm'
-import SignUp from './Components/SignUp/SignUpForm'
+import Account from './Components/Account/Login_Signup'
 import App from './../App'
 
 function Routing() {
@@ -9,8 +8,7 @@ function Routing() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />} />
-                <Route path='login' element={<Login />} />
-                <Route path='signup' element={<SignUp />} />
+                <Route path='account' element={<Account />} />
             </Routes>
         </BrowserRouter>
     );
