@@ -33,7 +33,7 @@ const SignUpForm = () => {
         <div className={styles.body}>
             <div className={`${styles.wrapper} ${action && styles.active}`}>
                 <div className={`${styles['form-box']} ${styles.login}`}>
-                    <form action=''>
+                    <form action='member/login'>
                         <h1>로그인<Link to='/' className={styles.to_home}><IoHomeOutline /></Link></h1>
                         <div className={styles['input-box']}>
                             <input type="text" placeholder='이메일' required />
