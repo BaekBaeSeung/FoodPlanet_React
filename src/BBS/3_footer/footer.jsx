@@ -1,7 +1,6 @@
 import React from "react";
 import './footer.css';
-import fb from '../assets/fbimg.png';
-import twitter from '../assets/twitter.png';
+import twitter from './../../images/assets/twitter.png';
 
 
 const Footer = () => {
@@ -11,46 +10,46 @@ const Footer = () => {
                 <div className="sb__footer-links">
                     <div className="sb__footer-links_div">
                         <h4>For Business</h4>
-                        <a href="/employer">
+                        <a href="/employer" className="a_T">
                             <p>Employer</p>
                         </a>
-                        <a href="/healthplan">
+                        <a href="/healthplan" className="a_T">
                             <p>Health Plan</p>
                         </a>
-                        <a href="/individual">
+                        <a href="/individual" className="a_T">
                             <p>Individual</p>
                         </a>
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Resources</h4>
-                        <a href="/resources">
+                        <a href="/resources" className="a_T">
                             <p>Resources Center</p>
                         </a>
-                        <a href="/testimonials">
+                        <a href="/testimonials" className="a_T">
                             <p>Testimonials</p>
                         </a>
-                        <a href="/stv">
+                        <a href="/stv" className="a_T">
                             <p>STV</p>
                         </a>
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Partners</h4>
-                        <a href="/partner">
+                        <a href="/partner" className="a_T">
                             <p>Swing Tech</p>
                         </a>
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Company</h4>
-                        <a href="/about">
+                        <a href="/about" className="a_T">
                             <p>About</p>
                         </a>
-                        <a href="/press">
+                        <a href="/press" className="a_T">
                             <p>Press</p>
                         </a>
-                        <a href="/career">
+                        <a href="/career" className="a_T">
                             <p>Career</p>
                         </a>
-                        <a href="/contact">
+                        <a href="/contact" className="a_T">
                             <p>Contact</p>
                         </a>
                     </div>
@@ -64,7 +63,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <hr /> {/* Replace <hr></hr> with <hr /> */}
+                <hr className="hr_T"/> {/* Replace <hr></hr> with <hr /> */}
                 <div className="sb__footer-below">
                     <div className="sb_footer-copyright">
                         <p>
@@ -72,10 +71,10 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="sb__footer-below-links">
-                        <a href="/terms"><div><p>Terms & Conditions</p></div></a>
-                        <a href="/privacy"><div><p>Privacy</p></div></a>
-                        <a href="/security"><div><p>Security</p></div></a>
-                        <a href="/cookie"><div><p>Cookie Declaration</p></div></a>
+                        <a href="/terms" className="a_T"><div><p>Terms & Conditions</p></div></a>
+                        <a href="/privacy" className="a_T"><div><p>Privacy</p></div></a>
+                        <a href="/security" className="a_T"><div><p>Security</p></div></a>
+                        <a href="/cookie" className="a_T"><div><p>Cookie Declaration</p></div></a>
                         {/* Corrected the href value from "/cooke" to "/cookie" */}
                     </div>
                 </div>
