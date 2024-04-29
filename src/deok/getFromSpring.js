@@ -13,7 +13,7 @@ function App() {
                 setError(null);
 
                 // 인텔리제이 - 마이스트링부트 - ForReactController
-                const url = 'http://localhost:8888/react/data/exam01';
+                const url = 'http://localhost:8888/member/login';
 
                 const response = await axios.get(url);
 
