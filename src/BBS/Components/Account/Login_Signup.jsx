@@ -36,32 +36,118 @@ const SignUpForm = () => {
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [birthDate, setBirthDate] = useState("");
+  const [role, setRole] = useState(""); // 밑에서 체크하면 ADMIN 안하면 USER
+
+  function validateInputs() {
+    const errors = {};
+
+    // 이메일 유효성 검사
+    if (!email.trim()) {
+      errors.email = "이메일을 입력해주세요.";
+      alert(errors.email);
+    } else if (
+      !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(email)
+    ) {
+      errors.email =
+        "유효한 이메일을 입력해주세요.\n" +
+        "1. @를 포함해야합니다.\n" +
+        "2. .com과 같은 올바른 이메일 형식이어야 합니다.";
+      alert(errors.email);
+    } else {
+      // 비밀번호 유효성 검사
+      if (!password) {
+        errors.password = "비밀번호를 입력해주세요!!!!";
+        alert(errors.password);
+      } else if (password.length < 6) {
+        errors.password = "비밀번호는 최소 6자 이상이어야 합니다.";
+        alert(errors.password);
+      } else {
+        // 비밀번호 확인 유효성 검사
+        if (password !== confirmPassword) {
+          errors.confirmPassword = "비밀번호가 일치하지 않습니다.";
+          alert(errors.confirmPassword);
+        } else {
+          // 닉네임 유효성 검사
+          if (!nickname.trim()) {
+            errors.nickname = "닉네임을 입력해주세요.";
+            alert(errors.nickname);
+          } else if (nickname.trim().length < 7) {
+            errors.nickname = "닉네임은 7개 이상의 문자를 포함해야 합니다.";
+            alert(errors.nickname);
+          } else {
+            // 전화번호 유효성 검사
+            if (!phoneNumber.trim()) {
+              errors.phoneNumber = "전화번호를 입력해주세요.";
+              alert(errors.phoneNumber);
+            } else if (!/^[0-9]{11}$/.test(phoneNumber)) {
+              errors.phoneNumber = "유효한 전화번호 11자리를 입력해주세요. ";
+              alert(errors.phoneNumber);
+            } else {
+              // 생년월일 유효성 검사
+              if (!birthDate.trim()) {
+                errors.birthDate = "생년월일을 입력해주세요.";
+                alert(errors.birthDate);
+              } else {
+                // 생년월일 형식(YYYY-MM-DD) 검사
+                const birthDateRegex = /^\d{4}\d{2}\d{2}$/;
+                if (!birthDateRegex.test(birthDate)) {
+                  errors.birthDate =
+                    "유효한 생년월일을 입력해주세요. (YYYY-MM-DD)";
+                  alert(errors.birthDate);
+                } else {
+                  // 생년월일 범위(1900년 이후) 검사
+                  const year = parseInt(birthDate.substring(0, 4), 10);
+                  if (year < 1900 || year > new Date().getFullYear()) {
+                    errors.birthDate = "유효한 생년월일을 입력해주세요.";
+                    alert(errors.birthDate);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return errors;
+  }
 
   // 백배승 회원가입 핸들러
-  const handleSignUpClick = () => {
-    console.log(
-      "백배승 Login_Signup.jsx + handleSignUpClick호출 : 회원가입 버튼 클릭"
-    );
-    axios
-      .post("http://localhost:8888/member/insert", {
-        // Spring 서버의 API 엔드포인트로 변경
-        email: email, // 이메일 필드에는 useState로 관리한 상태를 사용
-        password: password, // 비밀번호 필드에는 useState로 관리한 상태를 사용
-        confirmPassword: confirmPassword, // 비밀번호 확인 필드에는 useState로 관리한 상태를 사용
-        nickname: nickname, // 닉네임 필드에는 useState로 관리한 상태를 사용
-        phoneNumber: phoneNumber, // 전화번호 필드에는 useState로 관리한 상태를 사용
-        birthDate: birthDate, // 생년월일 필드에는 useState로 관리한 상태를 사용
-      })
-      .then((response) => {
-        // Handle success.
-        console.log("성공적으로 데이터가 전달됨...");
-        console.log("User profile", response.data.user);
-        console.log("User token", response.data.jwt);
-      })
-      .catch((error) => {
-        // Handle error.
-        console.log("An error occurred:", error.response);
-      });
+  const handleSignUpClick = (event) => {
+    event.preventDefault(); // 기본 제출 동작을 막습니다.
+
+    const errors = validateInputs(); // 입력값 유효성을 검사합니다.
+    if (Object.keys(errors).length === 0) {
+      // 에러가 없는 경우에만 회원가입 처리를 합니다.
+      console.log(
+        "백배승 Login_Signup.jsx + handleSignUpClick호출 : 회원가입 버튼 클릭"
+      );
+      axios
+        .post("http://localhost:8888/member/insert", {
+          // Spring 서버의 API 엔드포인트로 변경
+          email: email, // 이메일 필드에는 useState로 관리한 상태를 사용
+          password: password, // 비밀번호 필드에는 useState로 관리한 상태를 사용
+          nickname: nickname, // 닉네임 필드에는 useState로 관리한 상태를 사용
+          phone: phoneNumber, // 전화번호 필드에는 useState로 관리한 상태를 사용
+          birth: birthDate, // 생년월일 필드에는 useState로 관리한 상태를 사용
+          role: role, // 밑에서 체크하면 ADMIN 안하면 USER
+        })
+        .then((response) => {
+          // Handle success.
+          console.log("성공적으로 데이터가 전달됨...");
+          console.log("User profile", response.data.user);
+          console.log("User token", response.data.jwt);
+        })
+        .catch((error) => {
+          // Handle error.
+          console.log("회원가입 error occurred:", error.response);
+        });
+    } else {
+      // 에러가 있는면 폼 제출 막음
+      event.preventDefault();
+
+      alert("입력 정보를 다시 확인해주세요....");
+    }
   };
 
   return (
@@ -76,14 +162,13 @@ const SignUpForm = () => {
               </Link>
             </h1>
             <div className={styles["input-box"]}>
-              <input type="text" placeholder="이메일" required />
+              <input type="text" placeholder="이메일" />
               <FaEnvelope className={styles.icon} />
             </div>
             <div className={styles["input-box"]}>
               <input
                 type={pwVisible ? "text" : "password"}
                 placeholder="비밀번호"
-                required
               />
               <FaLock className={styles.icon} />
             </div>
@@ -127,7 +212,6 @@ const SignUpForm = () => {
               <input
                 type="email"
                 placeholder="이메일"
-                required
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
@@ -137,7 +221,6 @@ const SignUpForm = () => {
               <input
                 type="password"
                 placeholder="비밀번호"
-                required
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
@@ -147,7 +230,6 @@ const SignUpForm = () => {
               <input
                 type="password"
                 placeholder="비밀번호 확인"
-                required
                 value={confirmPassword}
                 onChange={(event) => setConfirmPassword(event.target.value)}
               />
@@ -157,7 +239,6 @@ const SignUpForm = () => {
               <input
                 type="text"
                 placeholder="닉네임"
-                required
                 value={nickname}
                 onChange={(event) => setNickname(event.target.value)}
               />
@@ -166,8 +247,7 @@ const SignUpForm = () => {
             <div className={styles["input-box"]}>
               <input
                 type="text"
-                placeholder="전화번호 ( - 빼고 번호만 입력해 주세요.)"
-                required
+                placeholder="연락처 ( - 빼고 번호만 입력해 주세요.)"
                 value={phoneNumber}
                 onChange={(event) => setPhoneNumber(event.target.value)}
               />
@@ -177,15 +257,25 @@ const SignUpForm = () => {
               <input
                 type="text"
                 placeholder="생년월일 (예시 : 1995/05/16)"
-                required
                 value={birthDate}
                 onChange={(event) => setBirthDate(event.target.value)}
               />
               <PiCalendarBold className={styles.icon} />
             </div>
+
             <div className={styles["remember-forgot"]}>
               <label>
-                <input type="checkbox" className="showPw" />
+                <input
+                  type="checkbox"
+                  className="showPw"
+                  onChange={(event) => {
+                    if (event.target.checked) {
+                      setRole("ADMIN");
+                    } else {
+                      setRole("USER");
+                    }
+                  }}
+                />
                 점주님 체크~~
               </label>
             </div>
