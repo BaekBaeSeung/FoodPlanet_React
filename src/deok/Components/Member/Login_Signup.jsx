@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Login_Signup.module.css";
-import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { PiCalendarBold } from "react-icons/pi";
 import { GiSmartphone } from "react-icons/gi";
 import { IoHomeOutline } from "react-icons/io5";
@@ -12,26 +12,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 
 const SignUpForm = () => {
-    const axios_url = "http://localhost:8888/member/";
-
-    const [action, setAction] = useState("");
-
-    const registerLink = () => {
-        setAction(" active");
-    };
-
-    const loginLink = () => {
-        setAction("");
-    };
-
-    // 비밀번호 보기 옵션을(로그인 체크박스) 관리하기 위한 상태와 상태를 업데이트하는 함수를 선언합니다.
-    const [pwVisible, setPwVisible] = useState(false); // 이게 누르면 반전되어서 true로 바뀜
-
-    // 비밀번호 보기 옵션을 활성화 또는 비활성화하는 함수를 정의합니다.
-    const showPw = () => {
-        // 현재 pwVisible 상태의 값을 반전시켜서 비밀번호 보기 상태를 토글합니다.
-        setPwVisible(!pwVisible);
-    };
+    const member_url = "http://localhost:8888/member/";
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -126,7 +107,7 @@ const SignUpForm = () => {
                 "백배승 Login_Signup.jsx + handleSignUpClick호출 : 회원가입 버튼 클릭"
             );
             axios
-                .post(axios_url + "insert", {
+                .post(member_url + "insert", {
                     // Spring 서버의 API 엔드포인트로 변경
                     email: email, // 이메일 필드에는 useState로 관리한 상태를 사용
                     password: password, // 비밀번호 필드에는 useState로 관리한 상태를 사용
@@ -154,35 +135,55 @@ const SignUpForm = () => {
     };
 
     //                        로그인 화면 관련 로직                         //
-    
-    //          state: 에러 상태 (잘못된 입력 정보 메시지에 쓸거임)         //
-    const [error, setError] = useState(false);
 
+    //          state : 로그인 에러 메시지              //
+    const [loginFailed, setLoginFailed] = useState(false);
+
+    //          state, function : 비밀번호 보기, 안보기 아이콘 클릭           //
+    const [pwVisible, setPwVisible] = useState(false);
+    const [pwIcon, setPwIcon] = useState("FaEyeSlash");
+
+    const showPw = () => {
+        setPwIcon(pwIcon === "FaEyeSlash" ? "FaEye" : "FaEyeSlash");
+        setPwVisible(!pwVisible);
+    };
+
+    //          state,function : 로그인 폼 <---> 회원가입 폼         //
+    const [action, setAction] = useState("");
+
+    const registerLink = () => {
+        setAction(" active");
+    };
+
+    const loginLink = () => {
+        setAction("");
+    };
     //                          쿠키 상태                          //
     const [cookies, setCookies] = useCookies(['asscessToken']);
 
-    //          네비게이트          //
+    //          네비게이터          //
     const navigator = useNavigate();
 
     //                      로그인 버튼 클릭                    //
     const handleLogInClick = (event) => {
         event.preventDefault();
-        
-        axios.post(axios_url + "login", {
+
+        axios.post(member_url + "login", {
             email: email,
             password: password
         })
-        .then((response) => {
-            console.log("로그인 .axios .then");
-            console.log("response.data.token : " + response.data.token)
-            setCookies("asscessToken", response.data.token);
-            navigator('/');
-        })
-        .catch((error) => {
-            console.log("로그인 .axios .catch");
-            console.log(error);
-        });
-        
+            .then((response) => {
+                console.log("로그인 .axios .then");
+                console.log("response.data.token : " + response.data.token)
+                setCookies("asscessToken", response.data.token);
+                navigator('/');
+            })
+            .catch((error) => {
+                console.log("로그인 .axios .catch");
+                console.log(error);
+                setLoginFailed(true);
+            });
+
     }
     return (
         <div className={styles.body}>
@@ -190,7 +191,7 @@ const SignUpForm = () => {
                 <div className={`${styles["form-box"]} ${styles.login}`}>
                     <form onSubmit={handleLogInClick}>
                         <h1>
-                            로그인
+                            Login
                             <Link to="/" className={styles.to_home}>
                                 <IoHomeOutline />
                             </Link>
@@ -198,30 +199,41 @@ const SignUpForm = () => {
                         <div className={styles["input-box"]}>
                             <input
                                 type="text"
-                                placeholder="이메일"
-                                value={email} onChange={(event) => setEmail(event.target.value)}/>
+                                placeholder="Email"
+                                value={email} onChange={(event) => setEmail(event.target.value)} />
                             <FaEnvelope className={styles.icon} />
                         </div>
                         <div className={styles["input-box"]}>
                             <input
                                 type={pwVisible ? "text" : "password"}
-                                placeholder="비밀번호"
+                                placeholder="Password"
                                 value={password} onChange={(event) => setPassword(event.target.value)} />
-                            <FaLock className={styles.icon} />
+                            {pwIcon === "FaEyeSlash" ?
+                                <FaEyeSlash
+                                    className={`${styles.icon} ${styles.pw}`}
+                                    onClick={showPw}
+                                />
+                                :
+                                <FaEye
+                                    className={`${styles.icon} ${styles.pw}`}
+                                    onClick={showPw}
+                                />
+                            }
+                        </div>
+                        <div className={`${styles.errBox} ${loginFailed ? '' : styles.hidden}`}  >
+                            <p>로그인 정보가 일치하지 않습니다.</p>
                         </div>
 
+                        <button type="submit">Login</button>
+                        <div className={styles.findOrSign}>
                         <div className={styles["remember-forgot"]}>
-                            <label>
-                                <input type="checkbox" className="showPw" onClick={showPw} />
-                                비밀번호 보기
-                            </label>
                             <p>비밀번호를 잊어버리셨나요?</p>
+                            <span className={styles.bar}>|</span>
                         </div>
-
-                        <button type="submit">로그인</button>
-
+                         
                         <div className={styles["register-link"]}>
                             <p onClick={registerLink}>계정이 없으신가요?</p>
+                        </div>
                         </div>
                         <div className={styles.btn_sns_login}>
                             <Link to="/">

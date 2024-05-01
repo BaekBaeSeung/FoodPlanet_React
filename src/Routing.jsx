@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./BBS/Components/Account/Login_Signup";
+// import Login from "./BBS/Components/Account/Login_Signup";
+import Login from './deok/Components/Member/Login_Signup'
+import MpClient from './deok/Components/Member/Mypage_Client'
 import App from "./App";
 
 function Routing() {
@@ -9,6 +11,7 @@ function Routing() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="login" element={<Login />} />
+        <Route path="mypage" element={<MpClient />} />
       </Routes>
     </BrowserRouter>
   );

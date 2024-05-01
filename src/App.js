@@ -11,8 +11,11 @@ function App() {
     <div className="App">
       <div>
         <h1>메인 페이지</h1>
-        <Link to="login" style={{ textDecoration: "none" }}>
-          <span>로그인</span>
+        <Link to="login">
+          <p>로그인</p>
+        </Link>
+        <Link to="mypage">
+        <p>마이페이지(클라)</p>
         </Link>
       </div>
       <Card />

@@ -89,7 +89,7 @@
     outline: none;
     border: 2px solid rgba(255, 255, 255, .1);
     border-radius: 40px;
-    font-size: 15px;
+    font-size: 13.5px;
     color: #fff;
     padding: 20px 45px 20px 20px;
 }
@@ -106,33 +106,23 @@
     font-size: 20px;
 }
 
+.input-box .icon.pw {
+    cursor: pointer;
+}
 .input-box .icon.phone {
     font-size: 30px;
     right: 14px;
 }
-
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
+.wrapper .errBox {
+    font-size: 13px;
+    color: #f7908d;
+    font-weight: bolder;
+    margin: -10px 30px 25px;
 }
 
-.remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 4px;
+.wrapper .hidden {
+    display: none;
 }
-
-.remember-forgot p{
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.remember-forgot p:hover{
-    text-decoration: underline;
-}
-
 
 .form-box button {
     width: 100%;
@@ -147,6 +137,30 @@
     color: #333;
     font-weight: 700;
 }
+.form-box .findOrSign{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper .remember-forgot {
+    font-size: 14.5px;
+    margin: 20px 0 15px;
+}
+
+.bar {
+    position: absolute;
+    right: 177px;
+    top: 338px;
+    color: rgba(169, 169, 169, 0.822);
+    font-weight: bold;
+}
+
+.remember-forgot p{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
 
 .form-box .register-link {
     font-size: 14.5px;
@@ -158,10 +172,6 @@
     color: #fff;
     cursor: pointer;
     font-weight: 600;
-}
-
-.register-link p:hover {
-    text-decoration: underline;
 }
 
 .btn_sns_login {
