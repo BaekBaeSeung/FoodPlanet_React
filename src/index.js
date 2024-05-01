@@ -1,13 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import Routing from './deok/Routing';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Routing from "./Routing";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Routing />
-  
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Routing />);
 
 reportWebVitals();
