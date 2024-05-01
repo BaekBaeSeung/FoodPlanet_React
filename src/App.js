@@ -9,7 +9,15 @@ import Login_BBS from "./BBS/Components/Account/Login_Signup";
 function App() {
   return (
     <div className="App">
-      <Login_BBS />
+      <div>
+        <h1>메인 페이지</h1>
+        <Link to="login" style={{ textDecoration: "none" }}>
+          <span>로그인</span>
+        </Link>
+      </div>
+      <Card />
+      <Body />
+      <Footer />
     </div>
   );
 }

@@ -38,6 +38,7 @@ const SignUpForm = () => {
   const [birthDate, setBirthDate] = useState("");
   const [role, setRole] = useState(""); // 밑에서 체크하면 ADMIN 안하면 USER
 
+  // 회원가입 유효성 검사
   function validateInputs() {
     const errors = {};
 
@@ -135,12 +136,16 @@ const SignUpForm = () => {
         .then((response) => {
           // Handle success.
           console.log("성공적으로 데이터가 전달됨...");
+          alert("회원가입 성공!");
           console.log("User profile", response.data.user);
           console.log("User token", response.data.jwt);
+          window.location.href = "/"; // 메인 페이지로 이동
         })
         .catch((error) => {
           // Handle error.
           console.log("회원가입 error occurred:", error.response);
+          alert("회원가입 실패!");
+          window.location.href = "login";
         });
     } else {
       // 에러가 있는면 폼 제출 막음
