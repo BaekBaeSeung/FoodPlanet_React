@@ -1,5 +1,4 @@
-
-:root{
+:root {
     --color-primary: #6C9BCF;
     --color-danger: #FF0060;
     --color-success: #1B9C85;
@@ -21,16 +20,16 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
-/* .dark-mode-variables{
+.dark-mode-variables{
     --color-background: #181a1e;
     --color-white: #202528;
     --color-dark: #edeffd;
     --color-dark-variant: #a3bdcc;
-    --color-light: rgba(0, 0, 0, 0.4);
+    /* --color-light: rgba(0, 0, 0, 0.4); */
     --box-shadow: 0 2rem 3rem var(--color-light);
-} */
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: 0;
@@ -40,51 +39,73 @@
     box-sizing: border-box;
 }
 
-.DEOK_MAIN_CL_body{
-    width: 100vw;
-    height: 100vh;
+.DEOK_MAIN_CL_body {
+    display: flex;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
     font-size: 0.88rem;
     user-select: none;
     overflow-x: hidden;
+    min-height: 100vh;
     color: var(--color-dark);
     background-color: var(--color-background);
 }
 
-.DEOK_MAIN_CL_container a{
+.DEOK_MAIN_CL_container p {
     color: var(--color-dark);
 }
 
-.DEOK_MAIN_CL_container img{
+.DEOK_MAIN_CL_container img {
     display: block;
     width: 100%;
     object-fit: cover;
 }
 
-.DEOK_MAIN_CL_container h1{
+.DEOK_MAIN_CL_profileBox {
+    width: 100px;
+    height: 100px;
+    border-radius: 70%;
+    overflow: hidden;
+    align-self: center;
+    margin-top: 10%;
+}
+
+.DEOK_MAIN_CL_profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.DEOK_MAIN_CL_Nickname {
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.DEOK_MAIN_CL_container h1 {
     font-weight: 800;
     font-size: 1.8rem;
 }
 
-.DEOK_MAIN_CL_container h2{
+.DEOK_MAIN_CL_container h2 {
     font-weight: 600;
     font-size: 1.4rem;
 }
 
-.DEOK_MAIN_CL_container h3{
+.DEOK_MAIN_CL_container h3 {
     font-weight: 500;
     font-size: 0.87rem;
 }
 
-.DEOK_MAIN_CL_container small{
+.DEOK_MAIN_CL_container small {
     font-size: 0.76rem;
 }
 
-.DEOK_MAIN_CL_container p{
+.DEOK_MAIN_CL_container p {
     color: var(--color-dark-variant);
 }
 
-.DEOK_MAIN_CL_container b{
+.DEOK_MAIN_CL_container b {
     color: var(--color-dark);
 }
 
@@ -92,72 +113,51 @@
     color: var(--color-info-dark);
 }
 
-.DEOK_MAIN_CL_primary{
+.DEOK_MAIN_CL_primary {
     color: var(--color-primary);
 }
 
-.DEOK_MAIN_CL_danger{
+.DEOK_MAIN_CL_danger {
     color: var(--color-danger);
 }
 
-.DEOK_MAIN_CL_warning{
+.DEOK_MAIN_CL_warning {
     color: var(--color-warning);
 }
 
-.success{
+.success {
     color: var(--color-success);
 }
 
-.DEOK_MAIN_CL_container{
+.DEOK_MAIN_CL_container {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     gap: 1.8rem;
 }
 
-.DEOK_MAIN_CL_aside{
-    height: 100vh;
+.DEOK_MAIN_CL_aside {
+    height: 100%;
 }
 
-.DEOK_MAIN_CL_toggle{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.4rem;
-}
-
-.DEOK_MAIN_CL_logo{
-    display: flex;
-    gap: 0.5rem;
-}
-
-.DEOK_MAIN_CL_logo img{
-    width: 2rem;
-    height: 2rem;
-}
-
-.DEOK_MAIN_CL_close{
-    padding-right: 1rem;
-    display: none;
-}
-
-.DEOK_MAIN_CL_sidebar{
+.DEOK_MAIN_CL_sidebar {
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
     border-radius: 15px;
-    height: 88vh;
+    width: 135px;
+    height: 90vh;
     position: relative;
     top: 1.5rem;
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_sidebar:hover{
+.DEOK_MAIN_CL_sidebar:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_sidebar a{
+.DEOK_MAIN_CL_sidebar p {
     display: flex;
     align-items: center;
     color: var(--color-info-dark);
@@ -168,225 +168,63 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_sidebar a span{
+.DEOK_MAIN_CL_sidebar p span {
     font-size: 1.6rem;
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_sidebar a:last-child{
-    position: absolute;
-    bottom: 2rem;
-    width: 100%;
-}
-
-.DEOK_MAIN_CL_sidebar a.active{
+.DEOK_MAIN_CL_sidebar p.active {
     width: 100%;
     color: var(--color-primary);
     background-color: var(--color-light);
     margin-left: 0;
 }
 
-.DEOK_MAIN_CL_sidebar a.active::before{
+.DEOK_MAIN_CL_sidebar p.active::before {
     content: '';
     width: 6px;
     height: 18px;
     background-color: var(--color-primary);
 }
 
-.DEOK_MAIN_CL_sidebar a.active span{
+.DEOK_MAIN_CL_sidebar p.active span {
     color: var(--color-primary);
     margin-left: calc(1rem - 3px);
 }
 
-.DEOK_MAIN_CL_sidebar a:hover{
+.DEOK_MAIN_CL_sidebar p:hover {
     color: var(--color-primary);
 }
 
-.DEOK_MAIN_CL_sidebar a:hover span{
+.DEOK_MAIN_CL_sidebar p:hover span {
     margin-left: 0.6rem;
 }
 
-.DEOK_MAIN_CL_sidebar .message-count{
-    background-color: var(--color-danger);
-    padding: 2px 6px;
-    color: var(--color-white);
-    font-size: 11px;
-    border-radius: var(--border-radius-1);
-}
-
-.DEOK_MAIN_CL_main{
-    margin-top: 1.4rem;
-}
-
-.DEOK_MAIN_CL_analyse{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
-}
-
-.DEOK_MAIN_CL_analyse > div{
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 1rem;
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.DEOK_MAIN_CL_analyse > div:hover{
-    box-shadow: none;
-}
-
-.DEOK_MAIN_CL_analyse > div .status{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.DEOK_MAIN_CL_analyse h3{
-    margin-left: 0.6rem;
-    font-size: 1rem;
-}
-
-.DEOK_MAIN_CL_analyse .progresss{
-    position: relative;
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-}
-
-.DEOK_MAIN_CL_analyse svg{
-    width: 7rem;
-    height: 7rem;
-}
-
-.DEOK_MAIN_CL_analyse svg circle{
-    fill: none;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform: translate(5px, 5px);
-}
-
-.DEOK_MAIN_CL_analyse .sales svg circle{
-    stroke: var(--color-success);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-.DEOK_MAIN_CL_analyse .visits svg circle{
-    stroke: var(--color-danger);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-.DEOK_MAIN_CL_analyse .searches svg circle{
-    stroke: var(--color-primary);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-.DEOK_MAIN_CL_analyse .progresss .percentage{
+.DEOK_MAIN_CL_sidebar p:last-child {
     position: absolute;
-    top: -3px;
-    left: -1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+    bottom: 50px;
 }
 
-.DEOK_MAIN_CL_main .new-users{
-    margin-top: 1.3rem;
+.DEOK_MAIN_CL_main {
+    margin-top: 1.4rem;
+    width: 836px;
 }
 
-.DEOK_MAIN_CL_main .new-users .user-list{
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 1rem;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.4rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.DEOK_MAIN_CL_main .new-users .user-list:hover{
-    box-shadow: none;
-}
-
-.DEOK_MAIN_CL_main .new-users .user-list .user{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.DEOK_MAIN_CL_main .new-users .user-list .user img{
-    width: 5rem;
-    height: 5rem;
-    margin-bottom: 0.4rem;
-    border-radius: 50%;
-}
-
-.DEOK_MAIN_CL_main .recent-orders{
-    margin-top: 1.3rem;
-}
-
-.DEOK_MAIN_CL_main .recent-orders h2{
-    margin-bottom: 0.8rem;
-}
-
-.DEOK_MAIN_CL_main .recent-orders table{
-    background-color: var(--color-white);
-    width: 100%;
-    padding: var(--card-padding);
-    text-align: center;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--card-border-radius);
-    transition: all 0.3s ease;
-}
-
-.DEOK_MAIN_CL_main .recent-orders table:hover{
-    box-shadow: none;
-}
-
-.DEOK_MAIN_CL_main table tbody td{
-    height: 2.8rem;
-    border-bottom: 1px solid var(--color-light);
-    color: var(--color-dark-variant);
-}
-
-.DEOK_MAIN_CL_main table tbody tr:last-child td{
-    border: none;
-}
-
-.DEOK_MAIN_CL_main .recent-orders a{
-    text-align: center;
-    display: block;
-    margin: 1rem auto;
-    color: var(--color-primary);
-}
-
-.DEOK_MAIN_CL_right-section{
+.DEOK_MAIN_CL_right-section {
     margin-top: 1.4rem;
 }
 
-.DEOK_MAIN_CL_right-section .nav{
+.DEOK_MAIN_CL_right-section .nav {
     display: flex;
     justify-content: end;
     gap: 2rem;
 }
 
-.DEOK_MAIN_CL_right-section .nav button{
+.DEOK_MAIN_CL_right-section .nav button {
     display: none;
 }
 
-.DEOK_MAIN_CL_right-section .dark-mode{
+.DEOK_MAIN_CL_right-section .dark-mode {
     background-color: var(--color-light);
     display: flex;
     justify-content: space-between;
@@ -397,7 +235,7 @@
     border-radius: var(--border-radius-1);
 }
 
-.DEOK_MAIN_CL_right-section .dark-mode span{
+.DEOK_MAIN_CL_right-section .dark-mode span {
     font-size: 1.2rem;
     width: 50%;
     height: 100%;
@@ -406,72 +244,31 @@
     justify-content: center;
 }
 
-.DEOK_MAIN_CL_right-section .dark-mode span.active{
+.DEOK_MAIN_CL_right-section .dark-mode span.active {
     background-color: var(--color-primary);
     color: white;
     border-radius: var(--border-radius-1);
 }
 
-.DEOK_MAIN_CL_right-section .nav .profile{
-    display: flex;
-    gap: 2rem;
-    text-align: right;
-}
-
-.DEOK_MAIN_CL_right-section .nav .profile .profile-photo{
-    width: 2.8rem;
-    height: 2.8rem;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.DEOK_MAIN_CL_right-section .user-profile{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 1rem;
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.DEOK_MAIN_CL_right-section .user-profile:hover{
-    box-shadow: none;
-}
-
-.DEOK_MAIN_CL_right-section .user-profile img{
-    width: 11rem;
-    height: auto;
-    margin-bottom: 0.8rem;
-    border-radius: 50%;
-}
-
-.DEOK_MAIN_CL_right-section .user-profile h2{
-    margin-bottom: 0.2rem;
-}
-
-.DEOK_MAIN_CL_right-section .reminders{
+.DEOK_MAIN_CL_right-section .reminders {
     margin-top: 2rem;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .header{
+.DEOK_MAIN_CL_right-section .reminders .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.8rem;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .header span{
+.DEOK_MAIN_CL_right-section .reminders .header span {
     padding: 10px;
     box-shadow: var(--box-shadow);
     background-color: var(--color-white);
     border-radius: 50%;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification{
+.DEOK_MAIN_CL_right-section .reminders .notification {
     background-color: var(--color-white);
     display: flex;
     align-items: center;
@@ -484,11 +281,11 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification:hover{
+.DEOK_MAIN_CL_right-section .reminders .notification:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification .content{
+.DEOK_MAIN_CL_right-section .reminders .notification .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -496,7 +293,7 @@
     width: 100%;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification .icon{
+.DEOK_MAIN_CL_right-section .reminders .notification .icon {
     padding: 0.6rem;
     color: var(--color-white);
     background-color: var(--color-success);
@@ -504,11 +301,11 @@
     display: flex;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification.deactive .icon{
+.DEOK_MAIN_CL_right-section .reminders .notification.deactive .icon {
     background-color: var(--color-danger);
 }
 
-.DEOK_MAIN_CL_right-section .reminders .add-reminder{
+.DEOK_MAIN_CL_right-section .reminders .add-reminder {
     background-color: var(--color-white);
     border: 2px dashed var(--color-primary);
     color: var(--color-primary);
@@ -518,12 +315,12 @@
     cursor: pointer;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .add-reminder:hover{
+.DEOK_MAIN_CL_right-section .reminders .add-reminder:hover {
     background-color: var(--color-primary);
     color: white;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .add-reminder div{
+.DEOK_MAIN_CL_right-section .reminders .add-reminder div {
     display: flex;
     align-items: center;
     gap: 0.6rem;
