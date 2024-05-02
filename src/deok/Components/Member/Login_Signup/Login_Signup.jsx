@@ -5,9 +5,9 @@ import { PiCalendarBold } from "react-icons/pi";
 import { GiSmartphone } from "react-icons/gi";
 import { IoHomeOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
-import kakao from "../../../images/assets/btn_kakao.svg";
-import google from "../../../images/assets/btn_google.svg";
-import naver from "../../../images/assets/btn_naver.svg";
+import kakao from "../../../../images/assets/btn_kakao.svg";
+import google from "../../../../images/assets/btn_google.svg";
+import naver from "../../../../images/assets/btn_naver.svg";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 
