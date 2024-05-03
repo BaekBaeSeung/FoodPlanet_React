@@ -1,15 +1,17 @@
 import React from "react";
 import "./App.css";
-import Body from "./BBS/2_body/body";
-import Footer from "./BBS/3_footer/footer";
-import Card from "./BBS/4_card_Test/AnimatedFlexCards";
+// import Body from "./BBS/2_body/body";
+// import Footer from "./BBS/3_footer/footer";
+// import Card from "./BBS/4_card_Test/AnimatedFlexCards";
+// import Login_BBS from "./BBS/Components/Account/Login_Signup";
 import { Link } from "react-router-dom";
-import Login_BBS from "./BBS/Components/Account/Login_Signup";
+import Main from "./BBS/main";
 
 function App() {
   return (
     <div className="App">
-      <div>
+      <Main />
+      {/* <div>
         <h1>메인 페이지</h1>
         <Link to="login">
           <p>로그인</p>
@@ -20,7 +22,7 @@ function App() {
       </div>
       <Card />
       <Body />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
