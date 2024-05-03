@@ -26,9 +26,9 @@ const Analytics = () => {
 
     return (
         <>
-            <h1>Analytics</h1>
+            <h1>매장 분석</h1>
             {/* <!-- Analyses --> */}
-            <div className="DEOK_MAIN_CL_analyse">
+            <div className="DEOK_MP_CL_analyse">
                 <div className="sales">
                     <div className="status">
                         <div className="info">
@@ -127,7 +127,7 @@ const Analytics = () => {
                                 <td>{order.productName}</td>
                                 <td>{order.productNumber}</td>
                                 <td>{order.paymentStatus}</td>
-                                <td className={order.status === 'Declined' ? 'DEOK_MAIN_CL_danger' : order.status === 'Pending' ? 'DEOK_MAIN_CL_warning' : 'DEOK_MAIN_CL_primary'}>{order.status}</td>
+                                <td className={order.status === 'Declined' ? 'DEOK_MP_CL_danger' : order.status === 'Pending' ? 'DEOK_MP_CL_warning' : 'DEOK_MP_CL_primary'}>{order.status}</td>
                                 <td className="primary">Details</td>
                             </tr>
                         ))}

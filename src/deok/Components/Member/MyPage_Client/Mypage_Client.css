@@ -37,9 +37,10 @@
     border: 0;
     text-decoration: none;
     box-sizing: border-box;
+    
 }
 
-.DEOK_MAIN_CL_body {
+.DEOK_MP_CL_body {
     display: flex;
     align-items: center;
     font-family: 'Poppins', sans-serif;
@@ -49,19 +50,20 @@
     min-height: 100vh;
     color: var(--color-dark);
     background-color: var(--color-background);
+    /* background-color: rgb(255, 255, 255); */
 }
 
-.DEOK_MAIN_CL_container p {
+.DEOK_MP_CL_container p {
     color: var(--color-dark);
 }
 
-.DEOK_MAIN_CL_container img {
+.DEOK_MP_CL_container img {
     display: block;
     width: 100%;
     object-fit: cover;
 }
 
-.DEOK_MAIN_CL_profileBox {
+.DEOK_MP_CL_profileBox {
     width: 100px;
     height: 100px;
     border-radius: 70%;
@@ -70,58 +72,58 @@
     margin-top: 10%;
 }
 
-.DEOK_MAIN_CL_profile {
+.DEOK_MP_CL_profile {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.DEOK_MAIN_CL_Nickname {
+.DEOK_MP_CL_Nickname {
     text-align: center;
     padding-top: 10px;
     padding-left: 5px;
 }
 
-.DEOK_MAIN_CL_container h1 {
+.DEOK_MP_CL_container h1 {
     font-weight: 800;
     font-size: 1.8rem;
 }
 
-.DEOK_MAIN_CL_container h2 {
+.DEOK_MP_CL_container h2 {
     font-weight: 600;
     font-size: 1.4rem;
 }
 
-.DEOK_MAIN_CL_container h3 {
+.DEOK_MP_CL_container h3 {
     font-weight: 500;
     font-size: 0.87rem;
 }
 
-.DEOK_MAIN_CL_container small {
+.DEOK_MP_CL_container small {
     font-size: 0.76rem;
 }
 
-.DEOK_MAIN_CL_container p {
+.DEOK_MP_CL_container p {
     color: var(--color-dark-variant);
 }
 
-.DEOK_MAIN_CL_container b {
+.DEOK_MP_CL_container b {
     color: var(--color-dark);
 }
 
-.DEOK_MAIN_CL_text-muted {
+.DEOK_MP_CL_text-muted {
     color: var(--color-info-dark);
 }
 
-.DEOK_MAIN_CL_primary {
+.DEOK_MP_CL_primary {
     color: var(--color-primary);
 }
 
-.DEOK_MAIN_CL_danger {
+.DEOK_MP_CL_danger {
     color: var(--color-danger);
 }
 
-.DEOK_MAIN_CL_warning {
+.DEOK_MP_CL_warning {
     color: var(--color-warning);
 }
 
@@ -129,18 +131,18 @@
     color: var(--color-success);
 }
 
-.DEOK_MAIN_CL_container {
+.DEOK_MP_CL_container {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     gap: 1.8rem;
 }
 
-.DEOK_MAIN_CL_aside {
+.DEOK_MP_CL_aside {
     height: 100%;
 }
 
-.DEOK_MAIN_CL_sidebar {
+.DEOK_MP_CL_sidebar {
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
@@ -153,11 +155,11 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_sidebar:hover {
+.DEOK_MP_CL_sidebar:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_sidebar p {
+.DEOK_MP_CL_sidebar p {
     display: flex;
     align-items: center;
     color: var(--color-info-dark);
@@ -168,63 +170,65 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_sidebar p span {
+.DEOK_MP_CL_sidebar p span {
     font-size: 1.6rem;
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_sidebar p.active {
+.DEOK_MP_CL_sidebar p.active {
     width: 100%;
     color: var(--color-primary);
     background-color: var(--color-light);
     margin-left: 0;
 }
 
-.DEOK_MAIN_CL_sidebar p.active::before {
+.DEOK_MP_CL_sidebar p.active::before {
     content: '';
     width: 6px;
     height: 18px;
     background-color: var(--color-primary);
 }
 
-.DEOK_MAIN_CL_sidebar p.active span {
+.DEOK_MP_CL_sidebar p.active span {
     color: var(--color-primary);
     margin-left: calc(1rem - 3px);
 }
 
-.DEOK_MAIN_CL_sidebar p:hover {
+.DEOK_MP_CL_sidebar p:hover {
     color: var(--color-primary);
 }
 
-.DEOK_MAIN_CL_sidebar p:hover span {
+.DEOK_MP_CL_sidebar p:hover span {
     margin-left: 0.6rem;
 }
 
-.DEOK_MAIN_CL_sidebar p:last-child {
+.DEOK_MP_CL_sidebar p:last-child {
     position: absolute;
     bottom: 50px;
+    color: var(--color-danger);
 }
 
-.DEOK_MAIN_CL_main {
+.DEOK_MP_CL_main {
     margin-top: 1.4rem;
     width: 836px;
+    height: 90vh;
 }
 
-.DEOK_MAIN_CL_right-section {
+.DEOK_MP_CL_right-section {
     margin-top: 1.4rem;
 }
 
-.DEOK_MAIN_CL_right-section .nav {
+.DEOK_MP_CL_right-section .nav {
     display: flex;
     justify-content: end;
     gap: 2rem;
 }
 
-.DEOK_MAIN_CL_right-section .nav button {
+.DEOK_MP_CL_right-section .nav button {
     display: none;
 }
 
-.DEOK_MAIN_CL_right-section .dark-mode {
+.DEOK_MP_CL_right-section .dark-mode {
     background-color: var(--color-light);
     display: flex;
     justify-content: space-between;
@@ -235,7 +239,7 @@
     border-radius: var(--border-radius-1);
 }
 
-.DEOK_MAIN_CL_right-section .dark-mode span {
+.DEOK_MP_CL_right-section .dark-mode span {
     font-size: 1.2rem;
     width: 50%;
     height: 100%;
@@ -244,31 +248,31 @@
     justify-content: center;
 }
 
-.DEOK_MAIN_CL_right-section .dark-mode span.active {
+.DEOK_MP_CL_right-section .dark-mode span.active {
     background-color: var(--color-primary);
     color: white;
     border-radius: var(--border-radius-1);
 }
 
-.DEOK_MAIN_CL_right-section .reminders {
+.DEOK_MP_CL_right-section .reminders {
     margin-top: 2rem;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .header {
+.DEOK_MP_CL_right-section .reminders .notificationHeader {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between !important;
     margin-bottom: 0.8rem;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .header span {
+.DEOK_MP_CL_right-section .reminders .notificationHeader span {
     padding: 10px;
     box-shadow: var(--box-shadow);
     background-color: var(--color-white);
     border-radius: 50%;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification {
+.DEOK_MP_CL_right-section .reminders .notification {
     background-color: var(--color-white);
     display: flex;
     align-items: center;
@@ -281,11 +285,11 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification:hover {
+.DEOK_MP_CL_right-section .reminders .notification:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification .content {
+.DEOK_MP_CL_right-section .reminders .notification .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -293,7 +297,7 @@
     width: 100%;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification .icon {
+.DEOK_MP_CL_right-section .reminders .notification .icon {
     padding: 0.6rem;
     color: var(--color-white);
     background-color: var(--color-success);
@@ -301,11 +305,11 @@
     display: flex;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .notification.deactive .icon {
+.DEOK_MP_CL_right-section .reminders .notification.deactive .icon {
     background-color: var(--color-danger);
 }
 
-.DEOK_MAIN_CL_right-section .reminders .add-reminder {
+.DEOK_MP_CL_right-section .reminders .add-reminder {
     background-color: var(--color-white);
     border: 2px dashed var(--color-primary);
     color: var(--color-primary);
@@ -315,12 +319,12 @@
     cursor: pointer;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .add-reminder:hover {
+.DEOK_MP_CL_right-section .reminders .add-reminder:hover {
     background-color: var(--color-primary);
     color: white;
 }
 
-.DEOK_MAIN_CL_right-section .reminders .add-reminder div {
+.DEOK_MP_CL_right-section .reminders .add-reminder div {
     display: flex;
     align-items: center;
     gap: 0.6rem;

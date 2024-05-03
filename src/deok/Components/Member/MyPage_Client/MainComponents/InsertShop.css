@@ -1,0 +1,15 @@
+.DEOK_MP_CL_insertShop {
+    border: 1px solid #ddd;
+    border-radius: var(--card-border-radius);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    padding: 50px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.DEOK_MP_CL_insertShop:hover {
+    box-shadow: none;
+}

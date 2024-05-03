@@ -1,10 +1,10 @@
-.DEOK_MAIN_CL_analyse {
+.DEOK_MP_CL_analyse {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
 }
 
-.DEOK_MAIN_CL_analyse>div {
+.DEOK_MP_CL_analyse>div {
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -14,59 +14,59 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_analyse>div:hover {
+.DEOK_MP_CL_analyse>div:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_analyse>div .status {
+.DEOK_MP_CL_analyse>div .status {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.DEOK_MAIN_CL_analyse h3 {
+.DEOK_MP_CL_analyse h3 {
     margin-left: 0.6rem;
     font-size: 1rem;
 }
 
-.DEOK_MAIN_CL_analyse .progresss {
+.DEOK_MP_CL_analyse .progresss {
     position: relative;
     width: 92px;
     height: 92px;
     border-radius: 50%;
 }
 
-.DEOK_MAIN_CL_analyse svg {
+.DEOK_MP_CL_analyse svg {
     width: 7rem;
     height: 7rem;
 }
 
-.DEOK_MAIN_CL_analyse svg circle {
+.DEOK_MP_CL_analyse svg circle {
     fill: none;
     stroke-width: 10;
     stroke-linecap: round;
     transform: translate(5px, 5px);
 }
 
-.DEOK_MAIN_CL_analyse .sales svg circle {
+.DEOK_MP_CL_analyse .sales svg circle {
     stroke: var(--color-success);
     stroke-dashoffset: -30;
     stroke-dasharray: 200;
 }
 
-.DEOK_MAIN_CL_analyse .visits svg circle {
+.DEOK_MP_CL_analyse .visits svg circle {
     stroke: var(--color-danger);
     stroke-dashoffset: -30;
     stroke-dasharray: 200;
 }
 
-.DEOK_MAIN_CL_analyse .searches svg circle {
+.DEOK_MP_CL_analyse .searches svg circle {
     stroke: var(--color-primary);
     stroke-dashoffset: -30;
     stroke-dasharray: 200;
 }
 
-.DEOK_MAIN_CL_analyse .progresss .percentage {
+.DEOK_MP_CL_analyse .progresss .percentage {
     position: absolute;
     top: -3px;
     left: -1px;
@@ -77,11 +77,11 @@
     width: 100%;
 }
 
-.DEOK_MAIN_CL_main .new-users {
+.DEOK_MP_CL_main .new-users {
     margin-top: 1.3rem;
 }
 
-.DEOK_MAIN_CL_main .new-users .user-list {
+.DEOK_MP_CL_main .new-users .user-list {
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -95,33 +95,33 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_main .new-users .user-list:hover {
+.DEOK_MP_CL_main .new-users .user-list:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_main .new-users .user-list .user {
+.DEOK_MP_CL_main .new-users .user-list .user {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.DEOK_MAIN_CL_main .new-users .user-list .user img {
+.DEOK_MP_CL_main .new-users .user-list .user img {
     width: 5rem;
     height: 5rem;
     margin-bottom: 0.4rem;
     border-radius: 50%;
 }
 
-.DEOK_MAIN_CL_main .recent-orders {
+.DEOK_MP_CL_main .recent-orders {
     margin-top: 1.3rem;
 }
 
-.DEOK_MAIN_CL_main .recent-orders h2 {
+.DEOK_MP_CL_main .recent-orders h2 {
     margin-bottom: 0.8rem;
 }
 
-.DEOK_MAIN_CL_main .recent-orders table {
+.DEOK_MP_CL_main .recent-orders table {
     background-color: var(--color-white);
     width: 100%;
     padding: var(--card-padding);
@@ -131,21 +131,21 @@
     transition: all 0.3s ease;
 }
 
-.DEOK_MAIN_CL_main .recent-orders table:hover {
+.DEOK_MP_CL_main .recent-orders table:hover {
     box-shadow: none;
 }
 
-.DEOK_MAIN_CL_main table tbody td {
+.DEOK_MP_CL_main table tbody td {
     height: 2.8rem;
     border-bottom: 1px solid var(--color-light);
     color: var(--color-dark-variant);
 }
 
-.DEOK_MAIN_CL_main table tbody tr:last-child td {
+.DEOK_MP_CL_main table tbody tr:last-child td {
     border: none;
 }
 
-.DEOK_MAIN_CL_main .recent-orders a {
+.DEOK_MP_CL_main .recent-orders a {
     text-align: center;
     display: block;
     margin: 1rem auto;

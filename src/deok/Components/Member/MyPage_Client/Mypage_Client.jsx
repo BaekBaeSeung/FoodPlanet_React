@@ -5,6 +5,8 @@ import 'material-icons';
 import imgEx from '../../../../images/assets/프사 예시.png'
 import Analytics from './MainComponents/Analytics'
 import UpdateInfo from './MainComponents/UpdateInfo';
+import DeleteMember from './MainComponents/DeleteMember';
+import InsertShop from './MainComponents/InsertShop'
 
 const MpClient = () => {
     const [viewWhat, setViewWhat] = useState('analytics');
@@ -22,14 +24,14 @@ const MpClient = () => {
     }
 
     return (
-        <div className="DEOK_MAIN_CL_body">
-            <div className="DEOK_MAIN_CL_container">
-                <aside className="DEOK_MAIN_CL_aside">
-                    <div className="DEOK_MAIN_CL_sidebar">
-                        <div className="DEOK_MAIN_CL_profileBox">
-                            <img className="DEOK_MAIN_CL_profile" src={imgEx} alt='프로필 사진' />
+        <div className="DEOK_MP_CL_body">
+            <div className="DEOK_MP_CL_container">
+                <aside className="DEOK_MP_CL_aside">
+                    <div className="DEOK_MP_CL_sidebar">
+                        <div className="DEOK_MP_CL_profileBox">
+                            <img className="DEOK_MP_CL_profile" src={imgEx} alt='프로필 사진' />
                         </div>
-                        <p className='DEOK_MAIN_CL_Nickname'>
+                        <p className='DEOK_MP_CL_Nickname'>
                             Nickname
                         </p>
                         <p className={viewWhat === 'analytics' ? 'active' : ''} onClick={() => clickMenu("analytics")}>
@@ -38,14 +40,11 @@ const MpClient = () => {
                         <p className={viewWhat === 'updateInfo' ? 'active' : ''} onClick={() => clickMenu("updateInfo")}>
                             <h3>회원 정보 수정</h3>
                         </p>
-                        <p className={viewWhat === 'updatePw' ? 'active' : ''} onClick={() => clickMenu("updatePw")}>
-                            <h3>비밀 번호 변경</h3>
-                        </p>
                         <p className={viewWhat === 'insertShop' ? 'active' : ''} onClick={() => clickMenu("insertShop")}>
-                            <h3>식당 등록</h3>
+                            <h3>업체 등록</h3>
                         </p>
                         <p className={viewWhat === 'updateShop' ? 'active' : ''} onClick={() => clickMenu("updateShop")}>
-                            <h3>식당 관리</h3>
+                            <h3>업체 관리</h3>
                         </p>
                         <p className={viewWhat === 'deleteMember' ? 'active' : ''} onClick={() => clickMenu("deleteMember")}>
                             <h3>회원 탈퇴</h3>
@@ -56,19 +55,18 @@ const MpClient = () => {
 
                 {/* <!-- Main Content --> */}
                 <main>
-                    <div className='DEOK_MAIN_CL_main'>
+                    <div className='DEOK_MP_CL_main'>
                         {viewWhat === "analytics" && <Analytics />}
                         {viewWhat === "updateInfo" && <UpdateInfo />}
-                        {viewWhat === "updatePw" && null}
-                        {viewWhat === "insertShop" && null}
+                        {viewWhat === "insertShop" && <InsertShop />}
                         {viewWhat === "updateShop" && null}
-                        {viewWhat === "deleteMember" && null}
+                        {viewWhat === "deleteMember" && <DeleteMember />}
                     </div>
                 </main>
                 {/* <!-- End of Main Content --> */}
 
                 {/* <!-- Right Section --> */}
-                <div className="DEOK_MAIN_CL_right-section">
+                <div className="DEOK_MP_CL_right-section">
                     <div className="nav">
                         <div className="dark-mode" onClick={toggleDarkMode}>
                             <span className="material-icons-sharp active">
@@ -79,10 +77,10 @@ const MpClient = () => {
                             </span>
                         </div>
                     </div>
-                    {/* <!-- End of Nav --> */}
+                    
 
                     <div className="reminders">
-                        <div className="header">
+                        <div className="notificationHeader">
                             <h2>알림</h2>
                             <span className="material-icons-sharp">
                                 notifications_none

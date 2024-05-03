@@ -200,14 +200,16 @@ const SignUpForm = () => {
                             <input
                                 type="text"
                                 placeholder="Email"
-                                value={email} onChange={(event) => setEmail(event.target.value)} />
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)} />
                             <FaEnvelope className={styles.icon} />
                         </div>
                         <div className={styles["input-box"]}>
                             <input
                                 type={pwVisible ? "text" : "password"}
                                 placeholder="Password"
-                                value={password} onChange={(event) => setPassword(event.target.value)} />
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)} />
                             {pwIcon === "FaEyeSlash" ?
                                 <FaEyeSlash
                                     className={`${styles.icon} ${styles.pw}`}
@@ -226,14 +228,14 @@ const SignUpForm = () => {
 
                         <button type="submit">Login</button>
                         <div className={styles.findOrSign}>
-                        <div className={styles["remember-forgot"]}>
-                            <p>비밀번호를 잊어버리셨나요?</p>
-                            <span className={styles.bar}>|</span>
-                        </div>
-                         
-                        <div className={styles["register-link"]}>
-                            <p onClick={registerLink}>계정이 없으신가요?</p>
-                        </div>
+                            <div className={styles["remember-forgot"]}>
+                                <p>비밀번호를 잊어버리셨나요?</p>
+                                {/* <span className={styles.bar}>|</span> */}
+                            </div>
+
+                            <div className={styles["register-link"]}>
+                                <p onClick={registerLink}>계정이 없으신가요?</p>
+                            </div>
                         </div>
                         <div className={styles.btn_sns_login}>
                             <Link to="/">
