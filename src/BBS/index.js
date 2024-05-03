@@ -1,10 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import Routing from "./Routing";
+import ReactDom from "react-dom/client";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Routing />);
-
-reportWebVitals();
+// index.html Id
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(root);
