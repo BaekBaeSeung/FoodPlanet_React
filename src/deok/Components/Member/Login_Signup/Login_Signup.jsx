@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Login_Signup.module.css";
 import { FaEye, FaEyeSlash, FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { PiCalendarBold } from "react-icons/pi";
@@ -160,7 +160,7 @@ const SignUpForm = () => {
         setAction("");
     };
     //                          쿠키 상태                          //
-    const [cookies, setCookie, removeCookie] = useCookies(['accessToken']);
+    const [cookies, setCookie] = useCookies(['accessToken']);
 
     //          네비게이터          //
     const navigator = useNavigate();
