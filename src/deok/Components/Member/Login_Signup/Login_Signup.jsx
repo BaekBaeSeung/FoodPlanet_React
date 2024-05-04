@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Login_Signup.module.css";
 import { FaEye, FaEyeSlash, FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { PiCalendarBold } from "react-icons/pi";
@@ -20,7 +20,7 @@ const SignUpForm = () => {
     const [nickname, setNickname] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [birthDate, setBirthDate] = useState("");
-    const [role, setRole] = useState(""); // 밑에서 체크하면 ADMIN 안하면 USER
+    const [role, setRole] = useState("USER"); // 밑에서 체크하면 ADMIN 안하면 USER
 
     function validateInputs() {
         const errors = {};
@@ -120,7 +120,8 @@ const SignUpForm = () => {
                     // Handle success.
                     console.log("성공적으로 데이터가 전달됨...");
                     console.log("User profile", response.data.user);
-                    console.log("User token", response.data.jwt);
+                    console.log("User token", response.data.token);
+                    window.location.reload()
                 })
                 .catch((error) => {
                     // Handle error.
@@ -159,7 +160,7 @@ const SignUpForm = () => {
         setAction("");
     };
     //                          쿠키 상태                          //
-    const [cookies, setCookies] = useCookies(['asscessToken']);
+    const [cookies, setCookies, removeCookies] = useCookies(['accessToken']);
 
     //          네비게이터          //
     const navigator = useNavigate();
@@ -167,15 +168,15 @@ const SignUpForm = () => {
     //                      로그인 버튼 클릭                    //
     const handleLogInClick = (event) => {
         event.preventDefault();
-
+    
         axios.post(member_url + "login", {
             email: email,
             password: password
         })
             .then((response) => {
                 console.log("로그인 .axios .then");
-                console.log("response.data.token : " + response.data.token)
-                setCookies("asscessToken", response.data.token);
+                console.log("response.data.token : " + response.data.token);
+                setCookies("accessToken", response.data.token);
                 navigator('/');
             })
             .catch((error) => {
@@ -183,8 +184,12 @@ const SignUpForm = () => {
                 console.log(error);
                 setLoginFailed(true);
             });
-
     }
+    
+    useEffect(() => {
+        console.log("cookies.accessToken : " + cookies.accessToken);
+    }, [cookies.accessToken]);
+
     return (
         <div className={styles.body}>
             <div className={`${styles.wrapper} ${action && styles.active}`}>

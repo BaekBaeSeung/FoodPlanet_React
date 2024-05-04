@@ -4,6 +4,7 @@ import { PiBowlFoodBold } from "react-icons/pi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const Navbar = () => {
   // Code to toggle/show navBar
@@ -27,6 +28,17 @@ const Navbar = () => {
     }
   };
   window.addEventListener("scroll", addBg);
+
+  //        쿠키 상태 관리        //
+  const [cookies, removeCookies] = useCookies(['accessToken']);
+
+  const handleLogoutClick = (event) => {
+    removeCookies('accessToken');
+    console.log(cookies.accessToken);
+    console.log('로그아웃 클릭');
+    window.location.reload();
+
+  }
 
   return (
     <section className="navBarSection">
@@ -74,12 +86,13 @@ const Navbar = () => {
 
             <div className="headerBtns flex">
               <button className="btn loginBtn">
-                <Link to="login">
-                  <a>Login</a>
-                </Link>
-              </button>
-              <button className="btn">
-                <a href="#">Sign Up</a>
+                {cookies.accessToken === undefined ?
+                  <Link to="login">
+                    <a>JoinUs</a>
+                  </Link>
+                  :
+                  <a onClick={handleLogoutClick}>Logout</a>
+                }
               </button>
             </div>
           </ul>
