@@ -160,7 +160,7 @@ const SignUpForm = () => {
         setAction("");
     };
     //                          쿠키 상태                          //
-    const [cookies, setCookies, removeCookies] = useCookies(['accessToken']);
+    const [cookies, setCookie, removeCookie] = useCookies(['accessToken']);
 
     //          네비게이터          //
     const navigator = useNavigate();
@@ -168,27 +168,21 @@ const SignUpForm = () => {
     //                      로그인 버튼 클릭                    //
     const handleLogInClick = (event) => {
         event.preventDefault();
-    
+
         axios.post(member_url + "login", {
             email: email,
             password: password
         })
             .then((response) => {
-                console.log("로그인 .axios .then");
-                console.log("response.data.token : " + response.data.token);
-                setCookies("accessToken", response.data.token);
+                setCookie("accessToken", response.data.token);
                 navigator('/');
             })
             .catch((error) => {
-                console.log("로그인 .axios .catch");
+                console.log("로그인중 axios error 발생");
                 console.log(error);
                 setLoginFailed(true);
             });
     }
-    
-    useEffect(() => {
-        console.log("cookies.accessToken : " + cookies.accessToken);
-    }, [cookies.accessToken]);
 
     return (
         <div className={styles.body}>
