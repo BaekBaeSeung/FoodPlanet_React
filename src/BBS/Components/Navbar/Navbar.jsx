@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { PiBowlFoodBold } from "react-icons/pi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 const Navbar = () => {
@@ -30,15 +30,17 @@ const Navbar = () => {
   window.addEventListener("scroll", addBg);
 
   //        쿠키 상태 관리        //
-  const [cookies, removeCookies] = useCookies(['accessToken']);
+  const [cookies, removeCookie] = useCookies(['accessToken']);
+  const navigator = useNavigate();
 
   const handleLogoutClick = (event) => {
-    removeCookies('accessToken');
-    console.log(cookies.accessToken);
-    console.log('로그아웃 클릭');
-    window.location.reload();
+    removeCookie('accessToken');
 
   }
+
+  useEffect(() => {
+    navigator('/')
+  }, [cookies.accessToken]);
 
   return (
     <section className="navBarSection">
