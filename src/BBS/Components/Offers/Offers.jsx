@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./offers.css";
-import { MdKingBed } from "react-icons/md";
-import { MdBathtub } from "react-icons/md";
+import { FaCarSide } from "react-icons/fa";
+import { FaChildReaching } from "react-icons/fa6";
 import { FaWifi } from "react-icons/fa";
 import { MdAirportShuttle } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
@@ -13,6 +13,9 @@ import img2 from "../../Assets/Dining/pexels-bemistermister-3434523.jpg";
 import img3 from "../../Assets/Dining/pexels-ben-maxwell-479813-1194234.jpg";
 import img4 from "../../Assets/Dining/pexels-chanwalrus-941861.jpg";
 import img5 from "../../Assets/Dining/pexels-cottonbro-3171201.jpg";
+import img6 from "../../Assets/Dining/pexels-igor-starkov-233202-1055054.jpg";
+import img7 from "../../Assets/Dining/pexels-lina-1813504.jpg";
+
 // import images ==========================>
 
 import Aos from "aos";
@@ -48,6 +51,20 @@ const Offers = [
     location: "서울 중구 소파로 95 촛불 레스토랑",
     price: "512,000",
   },
+  {
+    id: 5,
+    imgSrc: img6,
+    destTitle: "촛불1978",
+    location: "서울 중구 소파로 95 촛불 레스토랑",
+    price: "512,000",
+  },
+  {
+    id: 6,
+    imgSrc: img7,
+    destTitle: "촛불1978",
+    location: "서울 중구 소파로 95 촛불 레스토랑",
+    price: "512,000",
+  },
 ];
 
 const Offer = () => {
@@ -61,10 +78,10 @@ const Offer = () => {
         {/* secIntro는 App.css 에서 스타일링 함... */}
         <div className="secIntro">
           <h2 data-aos="fade-up" data-aos-duration="2000" className="secTitle">
-            특별 혜택!!
+            현재 세일중인 Planets
           </h2>
           <p data-aos="fade-up" data-aos-duration="2000">
-            역사적인 도시부터 자연의 경이로움까지, 세계의 최고를 만나러 오세요!
+            세일 정보를 확인해보세요!
           </p>
         </div>
 
@@ -73,7 +90,7 @@ const Offer = () => {
             return (
               <div
                 data-aos="fade-up"
-                data-aos-duration="3000"
+                data-aos-duration="1500"
                 className="singleOffer"
               >
                 <div className="destImage">
@@ -89,13 +106,13 @@ const Offer = () => {
                   </div>
                   <div className="amenities flex">
                     <div className="singleAmenity flex">
-                      <MdKingBed className="icon" />
-                      <small>2 Beds</small>
+                      <FaCarSide className="icon" />
+                      <small>Parking available</small>
                     </div>
 
                     <div className="singleAmenity flex">
-                      <MdBathtub className="icon" />
-                      <small>1 Bath</small>
+                      <FaChildReaching className="icon" />
+                      <small>Children's facilities</small>
                     </div>
 
                     <div className="singleAmenity flex">
