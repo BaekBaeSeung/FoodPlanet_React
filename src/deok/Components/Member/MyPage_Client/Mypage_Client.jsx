@@ -44,7 +44,7 @@ const MpClient = () => {
                             <h3>업체 등록</h3>
                         </p>
                         <p className={viewWhat === 'updateShop' ? 'active' : ''} onClick={() => clickMenu("updateShop")}>
-                            <h3>업체 관리</h3>
+                            <h3>나의 업체</h3>
                         </p>
                         <p className={viewWhat === 'deleteMember' ? 'active' : ''} onClick={() => clickMenu("deleteMember")}>
                             <h3>회원 탈퇴</h3>

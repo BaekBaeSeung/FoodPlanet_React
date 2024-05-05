@@ -297,7 +297,7 @@ const SignUpForm = () => {
                         <div className={styles["input-box"]}>
                             <input
                                 type="text"
-                                placeholder="연락처 ( - 빼고 번호만 입력해 주세요.)"
+                                placeholder="연락처 ( - 없이 번호만 입력해 주세요.)"
                                 value={phoneNumber}
                                 onChange={(event) => setPhoneNumber(event.target.value)}
                             />
