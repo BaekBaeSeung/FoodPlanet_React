@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./offers.css";
 import { FaCarSide } from "react-icons/fa";
 import { FaChildReaching } from "react-icons/fa6";
@@ -6,6 +7,7 @@ import { FaWifi } from "react-icons/fa";
 import { MdAirportShuttle } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 import { BsArrowRightShort } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 // import images ==========================>
 import img from "../../Assets/Dining/pexels-pixabay-260922.jpg";
@@ -66,11 +68,38 @@ const Offers = [
     price: "512,000",
   },
 ];
-
+let price = 300000;
 const Offer = () => {
+  const [shops, setShops] = useState([]);
+
   useEffect(() => {
+    axios
+      .get("http://localhost:8888/shops/readSixShops")
+      .then((response) => {
+        // Shop 엔티티 형식으로 변환
+        const shopData = response.data.map((shop) => ({
+          id: shop.id,
+          category: shop.shopCategory,
+          shopName: shop.shopName,
+          location: shop.address + " " + shop.addressDetail,
+          // offer: parseFloat(shop.offer) / 100,
+          offerInfo: shop.offer.replace("-", ""),
+          offer: (price * parseFloat(shop.offer.replace("-", ""))) / 100,
+          parking: shop.parking,
+          facilities: shop.facilities,
+          imgSrc: shop.shopImage01,
+        }));
+        console.log("가져와짐.");
+
+        setShops(shopData); // Shop 엔티티 정보 저장
+      })
+      .catch((error) => {
+        console.error("Offers 컴포넌트 Error fetching data:", error);
+      });
+
+    // Aos 초기화
     Aos.init({ duration: 2000 });
-  }, []);
+  }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때 한 번만 실행되도록 설정
 
   return (
     <section className="offer container section">
@@ -86,7 +115,7 @@ const Offer = () => {
         </div>
 
         <div className="mainContent grid">
-          {Offers.map((Offers) => {
+          {shops.map((shop) => {
             return (
               <div
                 data-aos="fade-up"
@@ -94,15 +123,15 @@ const Offer = () => {
                 className="singleOffer"
               >
                 <div className="destImage">
-                  <img src={Offers.imgSrc} alt="Image Name" />
+                  <img src={img2} alt="Image Name" />
 
-                  <span className="discount">30% Off</span>
+                  <span className="discount">{shop.offerInfo}% off</span>
                 </div>
 
                 <div className="offerBody">
                   <div className="price flex">
-                    <h4>{Offers.price} ￦</h4>
-                    <span className="status">For Rent</span>
+                    <h4>{shop.offer} ￦</h4>
+                    <span className="status">{shop.category}</span>
                   </div>
                   <div className="amenities flex">
                     <div className="singleAmenity flex">
@@ -128,12 +157,15 @@ const Offer = () => {
 
                   <div className="location flex">
                     <MdLocationOn className="icon" />
-                    <small>{Offers.location}.</small>
+                    <small>{shop.location}.</small>
                   </div>
-                  <button className="btn flex">
-                    View Details
-                    <BsArrowRightShort className="icon" />
-                  </button>
+
+                  <Link to="shopDetail">
+                    <button className="btn flex">
+                      View Details
+                      <BsArrowRightShort className="icon" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             );

@@ -77,7 +77,7 @@ const Popular = () => {
   useEffect(() => {
     // 데이터 가져오기
     axios
-      .get("http://localhost:8888/shops/load")
+      .get("http://localhost:8888/shops/readEightShops")
       .then((response) => {
         // Shop 엔티티 형식으로 변환
         const shopData = response.data.map((shop) => ({
@@ -118,8 +118,8 @@ const Popular = () => {
             data-aos-duration="2500"
             className="iconsDiv flex"
           >
-            <BsArrowLeftShort className="icon leftIcon" />
-            <BsArrowRightShort className="icon" />
+            {/* <BsArrowLeftShort className="icon leftIcon" /> */}
+            <BsArrowRightShort className="icon next" />
           </div>
         </div>
 
