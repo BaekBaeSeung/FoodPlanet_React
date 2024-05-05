@@ -51,7 +51,7 @@ const UpdateInfo = () => {
                             <input
                                 type='file'
                                 style={{ display: 'none' }}
-                                accept='image/jpg,image/png,image/jpeg'
+                                accept='image/*'
                                 name='profile_img'
                                 onChange={onChange}
                                 ref={fileInput} />
