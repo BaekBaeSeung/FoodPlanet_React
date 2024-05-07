@@ -68,7 +68,7 @@
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .popular .secContainer .mainContent .singleDestination .destImage .overlayInfo {
   position: absolute;
@@ -86,7 +86,13 @@
   opacity: 0.7;
   font-size: 15px;
 }
-.popular .secContainer .mainContent .singleDestination .destImage .overlayInfo h3 {
+.popular
+  .secContainer
+  .mainContent
+  .singleDestination
+  .destImage
+  .overlayInfo
+  h3 {
   color: var(--whiteColor);
   font-weight: 900;
 }
@@ -118,7 +124,12 @@
   width: -moz-max-content;
   width: max-content;
 }
-.popular .secContainer .mainContent .singleDestination .destFooter .number::after {
+.popular
+  .secContainer
+  .mainContent
+  .singleDestination
+  .destFooter
+  .number::after {
   content: " ";
   position: absolute;
   background: var(--PrimaryColor);
@@ -131,17 +142,36 @@
 .popular .secContainer .mainContent .singleDestination .destFooter .destText {
   justify-content: space-between;
 }
-.popular .secContainer .mainContent .singleDestination .destFooter .destText h6 {
+.popular
+  .secContainer
+  .mainContent
+  .singleDestination
+  .destFooter
+  .destText
+  h6 {
   color: var(--blackColor);
   font-size: 15px;
 }
-.popular .secContainer .mainContent .singleDestination .destFooter .destText .flex {
+.popular
+  .secContainer
+  .mainContent
+  .singleDestination
+  .destFooter
+  .destText
+  .flex {
   font-size: 16px;
   font-weight: 600;
   align-items: flex-start;
   transform: translateY(5px);
 }
-.popular .secContainer .mainContent .singleDestination .destFooter .destText .flex .icon {
+.popular
+  .secContainer
+  .mainContent
+  .singleDestination
+  .destFooter
+  .destText
+  .flex
+  .icon {
   color: var(--PrimaryColor);
 }
 .popular .secContainer .mainContent .singleDestination:hover .overlayInfo {
@@ -189,4 +219,4 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem !important;
   }
-}/*# sourceMappingURL=popular.css.map */
+} /*# sourceMappingURL=popular.css.map */
