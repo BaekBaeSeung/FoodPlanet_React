@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./shopDetail.module.css";
-import image1 from "../../Assets/Dining02/광화문식당02.jpg";
-import image2 from "../../Assets/Dining02/광화문식당02.jpg";
-import image3 from "../../Assets/Dining02/광화문식당02.jpg";
-import image4 from "../../Assets/Dining02/광화문식당02.jpg";
+import image1 from "../../Assets/Forest.jpg";
+import image2 from "../../Assets/Forest.jpg";
+import image3 from "../../Assets/Forest.jpg";
+import image4 from "../../Assets/Forest.jpg";
 
 import { useState } from "react";
 
-const AnimatedFlexCards = () => {
+const ShopDetail = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   const nextSlide = () => {
@@ -107,4 +107,4 @@ const AnimatedFlexCards = () => {
   );
 };
 
-export default AnimatedFlexCards;
+export default ShopDetail;

@@ -73,6 +73,29 @@ const Popular = () => {
   const [shops, setShops] = useState([]); // Shop 엔티티 정보를 저장할 변수
   let count = 1;
 
+  const handleArrowRightClick = () => {
+    axios
+      .get("http://localhost:8888/shops/readEightShops")
+      .then((response) => {
+        const newShops = response.data.map((newShop) => ({
+          id: newShop.id,
+          imgSrc: newShop.shopImage01,
+          destTitle: newShop.shopName,
+          location: newShop.address + " " + newShop.addressDetail,
+          grade: newShop.shopCategory,
+          comment: newShop.comment,
+          facilities: newShop.facilities,
+        }));
+        setShops(newShops); // 기존 shops 배열에 새 shops 추가
+      })
+      .catch((error) => {
+        console.error(
+          "Popular handleArrowRightClick handle Error fetching data:",
+          error
+        );
+      });
+  };
+
   // useEffect를 사용하여 컴포넌트가 렌더링될 때 데이터를 가져오고 Aos를 초기화하도록 설정
   useEffect(() => {
     // 데이터 가져오기
@@ -119,7 +142,10 @@ const Popular = () => {
             className="iconsDiv flex"
           >
             {/* <BsArrowLeftShort className="icon leftIcon" /> */}
-            <BsArrowRightShort className="icon next" />
+            <BsArrowRightShort
+              className="icon reload"
+              onClick={handleArrowRightClick}
+            />
           </div>
         </div>
 
